@@ -1,53 +1,58 @@
-<h4>Wypełnij formularz:</h4>
+<h5 style="color: palevioletred">Wypełnij formularz:</h5>
 
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
   <div style="display: inline-grid;">
 
-    <label for="name">Imię:</label>
+    <label for="name">Imię: </label>
     <input type="text" id="name" formControlName="name">
     <div *ngIf="contactForm.get('name').errors && contactForm.get('name').touched">
-      <i>Imię wymagane.</i>
+      <div class="alert alert-danger" role="alert">Imię wymagane.</div>
     </div>
     <div *ngIf="contactForm.get('name').invalid && contactForm.get('name').touched">
-      <i>Imię musi mieć minimum 3 znaki.</i>
+      <div class="alert alert-info" role="alert">Imię musi mieć minimum 3 znaki.</div>
     </div>
+    <br>
 
-    <label for="surname">Nazwisko:</label>
+    <label for="surname">Nazwisko: </label>
     <input type="text" id="surname" formControlName="surname">
     <div *ngIf="contactForm.get('surname').errors && contactForm.get('surname').touched">
-      <i>Nazwisko wymagane.</i>
+      <div class="alert alert-danger" role="alert">Nazwisko wymagane.</div>
     </div>
     <div *ngIf="contactForm.get('surname').invalid && contactForm.get('surname').touched">
-      <i>Nazwisko musi mieć minimum 3 znaki.</i>
+      <div class="alert alert-info" role="alert">Nazwisko musi mieć minimum 3 znaki.</div>
     </div>
+    <br>
 
-    <label for="email">E-mail:</label>
+    <label for="email">E-mail: </label>
     <input type="text" id="email" formControlName="email">
     <div *ngIf="contactForm.get('email').errors && contactForm.get('email').touched">
-      <i>E-mail wymagany.</i>
+      <div class="alert alert-danger" role="alert">E-mail wymagany.</div>
     </div>
     <div *ngIf="contactForm.get('email').touched && contactForm.get('email').invalid">
-      <i>Zły e-mail.</i>
+      <div class="alert alert-info" role="alert">Niepoprawny e-mail.</div>
     </div>
+    <br>
 
-    <label for="phone">Numer telefonu:</label>
+    <label for="phone">Numer telefonu: </label>
     <input type="text" id="phone" formControlName="phone">
+    <br>
 
-    <label for="password">Hasło:</label>
+    <label for="password">Hasło: </label>
     <input type="password" id="password" formControlName="password">
     <div *ngIf="contactForm.get('password').touched && contactForm.get('password').invalid">
-      <i>Hasło musi mieć co najmninej 8 znaków, przynajmniej jedną wielką literę oraz jeden ze znaków: @ # $ % ^ &.</i>
+      <div  class="alert alert-info" role="alert">Hasło musi mieć co najmninej 8 znaków, przynajmniej jedną wielką literę oraz jeden ze znaków: @ # $ % ^ &.</div>
     </div>
+    <br>
 
-    <label for="confirmPassword">Potwierdź hasło:</label>
+    <label for="confirmPassword">Potwierdź hasło: </label>
     <input type="password" id="confirmPassword" formControlName="confirmPassword">
     <div *ngIf="contactForm.get('confirmPassword').touched && contactForm.get('confirmPassword').invalid">
-      <i>Hasło musi mieć co najmninej 8 znaków, przynajmniej jedną wielką literę oraz jeden ze znaków: @ # $ % ^ &.</i>
+      <div class="alert alert-info" role="alert">Hasło musi mieć co najmninej 8 znaków, przynajmniej jedną wielką literę oraz jeden ze znaków: @ # $ % ^ &.</div>
     </div>
 
     <br>
     <div>
-        <label for="pet">Zwierzę:</label>
+        <label for="pet">Zwierzę: </label>
         <input type="radio" id="petDog" value="dog" formControlName="pet">Pies
         <input type="radio" id="petCat" value="cat" formControlName="pet">Kot
         <input type="radio" id="petOther" value="other" formControlName="pet">Inne
@@ -57,41 +62,41 @@
     <div>
       <label for="address">Adres: </label>
       <div>
-        <br>
+
         <label for="city">Miasto: </label>
         <input type="text" id="city" formControlName="city">
         <div *ngIf="contactForm.get('city').errors && contactForm.get('city').touched">
-          <i>Miasto wymagane.</i>
+          <div class="alert alert-danger" role="alert">Miasto wymagane.</div>
         </div>
         <div *ngIf="contactForm.get('city').invalid && contactForm.get('city').touched">
-          <i>Miasto musi mieć minimum 3 znaki.</i>
+          <div class="alert alert-info" role="alert">Miasto musi mieć minimum 3 znaki.</div>
         </div>
 
         <br>
         <label for="street">Ulica: </label>
         <input type="text" id="street" formControlName="street">
         <div *ngIf="contactForm.get('street').errors && contactForm.get('street').touched">
-          <i>Ulica wymagana.</i>
+          <div class="alert alert-danger" role="alert">Ulica wymagana.</div>
         </div>
         <div *ngIf="contactForm.get('street').invalid && contactForm.get('street').touched">
-          <i>Ulica musi mieć minimum 3 znaki.</i>
+          <div class="alert alert-info" role="alert">Ulica musi mieć minimum 3 znaki.</div>
         </div>
 
         <br>
         <label for="building">Numer domu: </label>
         <input type="text" id="building" formControlName="building">
         <div *ngIf="contactForm.get('building').errors && contactForm.get('building').touched">
-          <i>Numer domu wymagany.</i>
+          <div class="alert alert-danger" role="alert">Numer domu wymagany.</div>
         </div>
         <div *ngIf="contactForm.get('building').invalid && contactForm.get('building').touched">
-          <i>Numer domu musi mieć minimum 1 znak.</i>
+          <div class="alert alert-info" role="alert">Numer domu musi mieć minimum 1 znak.</div>
         </div>
 
         <br>
         <label for="flatNo">Numer mieszkania: </label>
         <input type="text" id="flatNo" formControlName="flatNo">
         <div *ngIf="contactForm.get('flatNo').errors">
-          <i>Zły numer mieszkania.</i>
+          <div class="alert alert-info" role="alert">Niepoprawny numer mieszkania.</div>
         </div>
       </div>
 
@@ -101,7 +106,7 @@
         <div>
           <label for="newsletter"></label>
           <input type="checkbox" id="newsletter" formControlName="newsletter">Zgoda na otrzymywanie wiadomości e-mail.
-          <div style="font-style: italic" *ngIf="contactForm.get('newsletter').pristine">Zgoda wymagana.</div>
+          <div class="alert alert-danger" role="alert" *ngIf="contactForm.get('newsletter').pristine">Zgoda wymagana.</div>
 
           <br>
           <div *ngIf="contactForm.get('phone').valid && contactForm.get('phone').value">
@@ -113,7 +118,7 @@
     </div>
 
     <br>
-    <button type="submit" [disabled]="contactForm.invalid">Wyślij</button>
-    <button type="button" (click)="onReset()">Reset</button>
+    <button type="submit" class="btn btn-outline-info" [disabled]="contactForm.invalid">Wyślij</button>
+    <button type="button" class="btn btn-outline-secondary" (click)="onReset()">Reset</button>
   </div>
 </form>
